@@ -1,0 +1,156 @@
+@use "reset";
+@use "fonts";
+@use "breakpoints";
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 64px;
+  &__h1 {
+    font-weight: bold;
+    font-size: 2em;
+  }
+  &__nav {
+    .nav__list {
+      display: flex;
+      justify-content: space-around;
+      gap: 2em;
+    }
+    .nav__item {
+    }
+    .nav__link {
+      font-size: 1.5em;
+    }
+  }
+
+  &__btn {
+    width: 50px;
+    height: 50px;
+    background: #eeeeee;
+    border-radius: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &-icon {
+      vertical-align: -0.125em;
+      width: 1.5em;
+      height: 1.5em;
+    }
+    &:hover {
+      background: #dddddd;
+    }
+  }
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 255, 0, 0.5),
+      rgba(255, 0, 0, 0.5)
+    ),
+    url("/img/hero-banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fefefe;
+
+  .hero__container {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .hero__h1 {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  .hero__p {
+    font-style: italic;
+  }
+}
+
+/* Main Section */
+.main {
+  padding: 2em;
+  &__post {
+  }
+  &__post-title {
+    font-size: 3em;
+  }
+  &__post-img {
+  }
+  &__post-body {
+  }
+
+  &__aside {
+    &-post {
+    }
+    &-title {
+      font-size: 2em;
+    }
+    &-img {
+    }
+    &-body {
+    }
+  }
+}
+
+/* Blog posts */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+}
+
+.card {
+  height: 300px;
+  max-width: 300px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 2em;
+  margin: 2em;
+  &__image {
+    width: 100%;
+    height: 200px;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  &__body {
+    font-size: 0.8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* FOOTER */
+.footer {
+  padding: 1em;
+
+  &__rrss-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+  &__rrss-item {
+  }
+  &__rrss-link {
+  }
+  &__rrss-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
