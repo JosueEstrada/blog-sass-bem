@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -9,11 +9,14 @@
   <body>
     <!-- Navbar -->
     <header class="header">
-      <h1 class="header__h1"><a href="" class="a">LOGO</a></h1>
+      <h1 class="header__title"><a href="" class="a">LOGO</a></h1>
       <nav class="header__nav">
         <ul class="nav__list">
           <li class="nav__item">
             <a href="#" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">About</a>
           </li>
           <li class="nav__item">
             <a href="#" class="nav__link">Blog</a>
@@ -52,89 +55,76 @@
       </div>
     </section>
 
+    <section class="search">
+      <input type="text" placeholder="Buscar..." class="search__input">
+      <button class="search__btn">Buscar</button>
+    </section>
+
     <!-- MAIN -->
-    <main class="main">
-      <article class="main__post">
-        <h2 class="main__post-title">Lorem ipsum dolor sit amet.</h2>
-        <img src="" alt="" class="main__post-img" />
-        <p class="main__post-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
-          officiis aliquam recusandae? Esse, voluptas quo repudiandae
-          perferendis error eaque ab perspiciatis at atque impedit aperiam natus
-          similique ipsum mollitia odit culpa qui. Eius ab fugit iure vero
-          soluta sint eveniet. Quae obcaecati sint inventore libero quibusdam
-          sapiente odio, dolores maxime nemo natus incidunt quas qui? Doloribus
-          eius culpa, quisquam iste nobis veniam, dolore repellendus ipsum
-          necessitatibus molestiae officiis, eaque vitae. Sunt, laboriosam ut?
-          Voluptatum magni voluptatem consectetur non facere, eos sed totam at
-          quibusdam earum inventore pariatur quaerat delectus quos aspernatur
-          expedita veniam temporibus ipsam aliquid obcaecati repellendus ea!
-          Porro esse consequatur, illo sed quis veritatis explicabo ex suscipit.
-          Provident distinctio dolorum illum pariatur inventore recusandae
-          reprehenderit sint molestiae explicabo impedit et quasi magni fugit
-          accusantium labore saepe, deleniti architecto. Asperiores distinctio,
-          iure accusamus ad modi reiciendis quasi cum sunt. Cum in totam
-          voluptatem soluta similique hic, ipsa cupiditate ducimus fuga sit.
-          Voluptatibus, minima dolores dolorum commodi accusantium consequuntur
-          ea nemo fugiat natus doloremque eligendi asperiores eos sit ducimus
-          perspiciatis iusto cupiditate autem incidunt sint. Ratione rem, at
-          laborum culpa ipsam earum ab! Ipsum dolores unde in exercitationem,
-          nemo veritatis, quae, provident quos odio molestiae dolore? Molestiae
-          est dolorum ad.
-        </p>
-      </article>
-      <aside class="main__aside">
-        <article class="main__aside-post">
-          <h2 class="main__aside-title">Lorem, ipsum dolor.</h2>
-          <img src="" alt="" class="main__aside-img" />
-          <p class="main__aside-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Repellendus, inventore.
+    <section class="grid">
+      <main class="grid-main">
+        <div class="grid-main__post">
+          <h2 class="grid-main__post-title">Lorem ipsum dolor sit amet.</h2>
+          <img class="grid-main__post-img" src="https://source.unsplash.com/800x450/?xmas" alt="">
+          <p class="grid-main__post-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus minus sapiente quisquam cumque commodi necessitatibus
+            doloribus fugiat deserunt ex accusantium, nisi nulla, voluptates
+            quidem totam nesciunt vitae, perferendis ipsa voluptate. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Inventore libero
+            architecto praesentium odio impedit voluptatibus illum nostrum ullam
+            perspiciatis pariatur facilis tempora repellendus aspernatur beatae
+            sunt, dolorum ducimus alias repudiandae.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, inventore. Dolorem, esse optio atque provident exercitationem at in quod ratione autem! Tenetur quae ipsa quidem obcaecati rerum aspernatur quaerat quisquam iure facere qui repudiandae voluptates optio, magni quos nesciunt voluptas, dignissimos deserunt! Modi quae obcaecati soluta numquam id recusandae voluptate quisquam cumque corporis at, repudiandae, porro perspiciatis laudantium placeat molestias accusamus quas distinctio asperiores praesentium quia illum animi. Nulla nemo, fugit explicabo odit animi harum blanditiis expedita reprehenderit totam esse soluta vero laboriosam nostrum. Voluptatibus omnis, earum saepe, harum quod vel distinctio, perferendis veritatis nobis unde labore quis aspernatur officiis.
           </p>
+        </div>
+      </main>
+      <!-- SIDEPOSTS -->
+      <section class="grid-menu">
+        <h2 class="grid-menu__title">Categorías</h2>
+        <ul class="grid-menu__list">
+          <li class="grid-menu__link"><a href="#">Link 1</a></li>
+          <li class="grid-menu__link"><a href="#">Link 2</a></li>
+          <li class="grid-menu__link"><a href="#">Link 3</a></li>
+          <li class="grid-menu__link"><a href="#">Link 4</a></li>
+          <li class="grid-menu__link"><a href="#">Link 5</a></li>
+      </section>
+      <aside class="grid-aside">
+        <article class="grid-aside__card">
+          <img
+            src="https://source.unsplash.com/800x450/?merry-xmas"
+            alt=""
+            class="grid-aside__card-img"
+          />
+          <div class="grid-aside__card-content">
+            <h2 class="grid-aside__card-title">Lorem, ipsum dolor.</h2>
+            <p class="grid-aside__card-body">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+              deserunt, animi nisi ipsa eveniet incidunt? Culpa pariatur
+              accusantium eveniet veniam quibusdam, tenetur dolorum libero.
+              Voluptate beatae itaque nostrum provident sequi?
+            </p>
+            <button class="grid-aside__card-btn">Leer más... →</button>
+          </div>
+        </article>
+        <article class="grid-aside__card">
+          <img
+            src="https://source.unsplash.com/800x450/?xmas-holidays"
+            alt=""
+            class="grid-aside__card-img"
+          />
+          <div class="grid-aside__card-content">
+            <h2 class="grid-aside__card-title">Lorem, ipsum dolor.</h2>
+            <p class="grid-aside__card-body">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+              deserunt, animi nisi ipsa eveniet incidunt? Culpa pariatur
+              accusantium eveniet veniam quibusdam, tenetur dolorum libero.
+              Voluptate beatae itaque nostrum provident sequi?
+            </p>
+            <button class="grid-aside__card-btn">Leer más... →</button>
+          </div>
         </article>
       </aside>
-    </main>
-
-    <!-- BLOG POSTS -->
-    <section class="card-container">
-      <div class="card">
-        <img
-          src="https://picsum.photos/id/20/200/300"
-          alt=""
-          class="card__image"
-        />
-        <h2 class="card__title">Lorem, ipsum dolor.</h2>
-        <p class="card__body">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus
-          inventore quibusdam cum, ratione voluptatem sapiente error ipsam
-          maxime officia eligendi tempore unde laboriosam voluptate libero
-          numquam. Quam rem dolorem ea.
-        </p>
-      </div>
-      <div class="card">
-        <img
-          src="https://picsum.photos/id/30/200/300"
-          alt=""
-          class="card__image"
-        />
-        <h2 class="card__title">Lorem, ipsum dolor.</h2>
-        <p class="card__body">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
-          reprehenderit cumque commodi nemo officia sint odit asperiores
-          voluptate, aliquid laudantium ad vero numquam incidunt, consequatur
-          ullam quos corrupti eum iste.
-        </p>
-      </div>
-      <div class="card">
-        <img src="https://picsum.photos/200/300" alt="" class="card__image" />
-        <h2 class="card__title">Lorem, ipsum dolor.</h2>
-        <p class="card__body">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia error
-          hic adipisci quaerat minima nostrum tenetur dolor quam voluptatum
-          culpa, accusantium facilis sit beatae, nihil, in recusandae obcaecati
-          quasi est!
-        </p>
-      </div>
     </section>
 
     <!-- FOOTER -->
@@ -201,8 +191,14 @@
           ></a>
         </li>
       </ul>
-      <h3>Made with Vite</h3>
-      <p>Copyright&copy; 2023</p>
+      <ul class="footer__menu">
+        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Blog</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+      </ul>
+      <p class="footer__copy">&copy;2023 josuestrd | All Rights Reserved</p>
+      
     </footer>
 
     <script type="module" src="/src/main.js"></script>

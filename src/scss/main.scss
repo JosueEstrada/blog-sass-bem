@@ -1,27 +1,17 @@
 @use "reset";
 @use "fonts";
-@use "breakpoints";
+@use "breakpoints" as *;
 
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 64px;
-  &__h1 {
+  &__title {
     font-weight: bold;
     font-size: 2em;
   }
   &__nav {
-    .nav__list {
-      display: flex;
-      justify-content: space-around;
-      gap: 2em;
-    }
-    .nav__item {
-    }
-    .nav__link {
-      font-size: 1.5em;
-    }
   }
 
   &__btn {
@@ -29,10 +19,14 @@
     height: 50px;
     background: #eeeeee;
     border-radius: 100%;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    @include breakpoint("md") {
+      display: none;
+    }
+
     &-icon {
       vertical-align: -0.125em;
       width: 1.5em;
@@ -43,95 +37,241 @@
     }
   }
 }
+.nav__list {
+  justify-content: space-around;
+  gap: 2em;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background-color: var(--secondary-color);
+  padding: 1em;
+  text-align: center;
+  display: none;
+
+  @include breakpoint("md") {
+    position: static;
+    display: flex;
+    padding: 0;
+  }
+}
+.nav__item {
+  margin: 1rem 0;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.2rem;
+  }
+}
+.nav__link {
+  font-size: 1.5em;
+}
+
+.show-menu {
+  display: block;
+  @include breakpoint("md") {
+    display: flex;
+  }
+}
 
 /* Hero Section */
 .hero {
   width: 100%;
-  height: 500px;
+  height: 300px;
   background-image: linear-gradient(
       180deg,
       rgba(0, 255, 0, 0.5),
       rgba(255, 0, 0, 0.5)
     ),
-    url("/img/hero-banner.jpg");
+    url("https://source.unsplash.com/1600x900/?xmas");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   color: #fefefe;
 
   .hero__container {
-    max-width: 800px;
+    height: 100%;
+    max-width: 100%;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero__h1 {
-    font-size: 4em;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1em;
+    @include breakpoint("sm") {
+      font-size: 4rem;
+    }
   }
   .hero__p {
+    padding-inline: 3rem;
     font-style: italic;
+    overflow: auto;
+  }
+}
+
+/* Search */
+.search {
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin: 1rem;
+  @include breakpoint("sm") {
+    flex-direction: row;
+  }
+  &__input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 2px 0 hsla(0, 0%, 0%, 0.05);
+    &:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+    }
+  }
+  &__btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+    background-color: #4caf50;
+    color: var(--secondary-color);
+    cursor: pointer;
+    outline: none;
+    &:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+    }
+    @include breakpoint("sm") {
+      width: auto;
+    }
   }
 }
 
 /* Main Section */
-.main {
-  padding: 2em;
-  &__post {
-  }
-  &__post-title {
-    font-size: 3em;
-  }
-  &__post-img {
-  }
-  &__post-body {
-  }
+.grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "main main main"
+    "menu menu menu"
+    "aside aside aside";
 
-  &__aside {
-    &-post {
-    }
+  @include breakpoint("md") {
+    grid-template-areas:
+      "main main menu"
+      "main main aside"
+      "main main aside";
+  }
+}
+.grid-main {
+  grid-area: main;
+  &__post {
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 hsla(0, 0%, 0%, 0.05);
+    border: 1px solid transparent;
+    margin: 0 1rem;
     &-title {
-      font-size: 2em;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 1rem;
+      line-height: 1.5;
     }
     &-img {
+      max-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+
+    &-body {
+      padding: 1rem;
+    }
+  }
+}
+
+.grid-menu {
+  grid-area: menu;
+  border-radius: 0.5rem;
+
+  box-shadow: 0 1px 2px 0 hsla(0, 0%, 0%, 0.05);
+  border: 1px solid transparent;
+  padding: 1.1rem;
+  margin: 0 1rem;
+
+  &__title {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: underline;
+    margin: 1rem 0;
+
+    @include breakpoint("md") {
+      display: block;
+    }
+  }
+  &__link {
+  }
+}
+
+.grid-aside {
+  grid-area: aside;
+  &__card {
+    border-radius: 0.5rem;
+
+    box-shadow: 0 1px 2px 0 hsla(0, 0%, 0%, 0.05);
+    border: 1px solid transparent;
+    margin: 0 1rem 1rem 1rem;
+    overflow: hidden;
+    &-img {
+      max-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+    &-content {
+      padding: 1.1rem;
+    }
+    &-title {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      font-weight: 600;
     }
     &-body {
+      margin-top: 0.5rem;
+
+      font-size: 0.875rem;
+      line-height: 1.25rem;
     }
-  }
-}
-
-/* Blog posts */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-
-  align-items: center;
-}
-
-.card {
-  height: 300px;
-  max-width: 300px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  padding: 2em;
-  margin: 2em;
-  &__image {
-    width: 100%;
-    height: 200px;
-  }
-  &__title {
-    font-weight: bold;
-    font-size: 1.5em;
-  }
-  &__body {
-    font-size: 0.8em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    &-btn {
+      color: var(--secondary-color);
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: 600;
+      background-color: hsl(221, 83%, 53%);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
   }
 }
 
@@ -152,5 +292,20 @@
   &__rrss-icon {
     width: 32px;
     height: 32px;
+  }
+  &__menu {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    @include breakpoint("sm") {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+  &__copy {
+    text-align: center;
   }
 }
